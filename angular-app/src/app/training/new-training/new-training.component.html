@@ -1,0 +1,26 @@
+<section fxLayout fxLayoutAlign="center" style="padding: 40px">
+  <mat-card fxFlex="400px" fxFlex.xs="100%">
+    <mat-card-header>
+      <div mat-card-avatar class="example-image"></div>
+      <mat-card-title>New Training</mat-card-title>
+      <mat-card-subtitle>Excercise training !!</mat-card-subtitle>
+    </mat-card-header>
+    <br />
+    <mat-card-content fxLayoutAlign="center">
+       <mat-select placeholder="Excercise Type" [(value)]="selected">
+        <mat-option *ngFor="let type of excercises" [value]="type.id">
+          {{ type.name }}
+        </mat-option> 
+      </mat-select> 
+      <!-- <mat-select [(value)]="selected" placeholder="Excercise Type"> 
+        <mat-option value="Crunches">Crunches</mat-option>
+        <mat-option value="Running">Running</mat-option>
+        <mat-option value="Lunges">Lunges</mat-option>
+        <mat-option value="Burpees">Burpees</mat-option>
+      </mat-select> -->
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-raised-button color="primary" (click)="onClick(selected)">Start</button> 
+    </mat-card-actions>
+  </mat-card>
+</section>
